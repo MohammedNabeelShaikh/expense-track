@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { motion } from 'framer-motion';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,13 +18,11 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[var(--bg-color)] p-4">
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div 
         className="w-full max-w-md bg-[var(--card-bg)] rounded-2xl shadow-xl p-8 border border-[var(--border-color)]"
       >
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-[var(--text-main)]">Welcome Back</h1>
+          <h1 className="text-2xl font-bold text-[var(--text-main)] tracking-tight">Welcome Back</h1>
           <p className="text-[var(--text-muted)] mt-2">Log in to manage your finances</p>
         </div>
 
@@ -63,7 +60,7 @@ const Login = () => {
         <p className="mt-6 text-center text-sm text-[var(--text-muted)]">
           Don't have an account? <Link to="/signup" className="text-[var(--accent-color)] hover:underline">Sign up</Link>
         </p>
-      </motion.div>
+      </div>
     </div>
   );
 };
